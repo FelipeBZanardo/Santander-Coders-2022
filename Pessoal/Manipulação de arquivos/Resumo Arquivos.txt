@@ -1,0 +1,75 @@
+MANIPULAÇÃO DE ARQUIVOS
+----------------------------
+
+1) Instanciar um novo arquivo ou diretório:
+
+	File arquivo = new File(pathname);
+
+	- Instanciar o arquivo não siginifica que ele de fato exista!
+	- pathname: caminho para o arquivo.
+		- não esquecer de colocar a extensão
+		- caso esteja no mesmo diretório do projeto, basta passar o nome do arquivo
+		- caso contrário, deve-se passar o caminho completo para o arquivo
+
+	File arquivo = new File(diretorio, nomeArquivo);						cria um arquivo a partir de um diretório
+
+2) Criar um arquivo:
+
+	arquivo.createNewFile();
+
+3) Renomear um arquivo ou diretório:
+
+	File arquivo1 = new File("Arquivo1.txt");							lembrando que instanciar File, não significa que o arquivo foi de fato criado
+	File arquivo2 = new File("Arquivo2.txt");							deve-se usar .createNewFile() para criar o arquivo
+
+	boolean statusRename = arquivo1.remaneTo(arquivo2);
+	
+	
+4) Verificar se o arquivo existe:
+
+	arquivo.exists();		retorna um boolean
+
+
+
+5) Verifica se o diretório foi criado:
+	
+	arquivo.mkdir();
+
+6) Excluir um arquivo:
+	
+	arquivo.deleteOnExit();
+
+7) Arquivos existentes dentro de um diretório:
+
+	File[] files = diretorio.listFiles();
+
+8) Verifica se é um diretório ou um arquivo:
+
+	for (File file : diretorio.listFiles())
+	{
+		if (file.isFile())
+			sout(file.getName() + "é arquivo");
+		if (file.isDirectory())
+			sout(file.getName() + "é diretório");
+	}
+
+9) Escrever em um arquivo:
+
+	FileWriter filewriter = new FileWriter(arquivo);
+	BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+	bufferedWriter.write("Texto a escrever");					Se já houver algo escrito, todo texto é perdido, ou seja, substituído pelo texto novo
+	bufferedWriter.newLine();							pula para próxima linha
+
+	bufferedWriter.close();
+	filewriter.close();								não esquecer de fechar!!!
+
+10) Ler um arquivo:
+
+	FileReader fileReader = new FileReader(arquivo);
+	BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+	while(bufferedReader.ready()){
+		String linha = bufferedReader.readLine();
+		sout(linha);
+	}

@@ -1,0 +1,25 @@
+Erros são conhecidos como exceções.
+Podem ocorrer:
+	- erros de lógica
+	- acesso a recursos não disponíveis
+
+Para tratar exceções:
+	try {
+
+	}catch(exception 1){
+
+	}catch(exception 2){
+
+	} finally {
+	
+	}
+
+try (tente fazer):
+	linhas de código que podem vir a lançar um exceção
+
+catch:
+	linhas de código que será realizada se ocorrer a exceção
+
+
+finally:
+	as linhas de código serão executadas independente se houver ou não uma exceção

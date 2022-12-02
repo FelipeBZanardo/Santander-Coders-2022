@@ -1,0 +1,25 @@
+git config --list						lista de configuração do git
+								e-mail e name devem ser iguais ao do github
+								felipebueno6@hotmail.com	FelipeBZanardo
+
+git config --global --unset user.email				apaga as configurações de email e name
+git config --global --unset user.name
+
+git config --global user.email "felipebueno6@hotmail.com"	configura o email e o name
+git config --global user.name "FelipeBZanardo"
+
+Criar um repositório do GitHub:
+1º passo: acessar o site da GitHub e logar
+2º passo: clicar na imagem de perfil e acessar "seus repositórios"
+3º passo: clicar em "novo repositório"
+4º passo: dar um nome e uma descrição
+5º passo: não marcar o README pois já existe um arquivo criado no repositório local
+6º passo: clicar em "criar repositório"
+7º passo: copiar a url https do repositório: git@github.com:FelipeBZanardo/livro-receitas.git
+8º passo: acessar o Git Bash na pasta que contém o arquivo
+9º passo: git init
+10º passo: git remote add origin url
+	  git remote add origin git@github.com:FelipeBZanardo/livro-receitas.git
+11º passo: verificar se está tudo certo: git remote -v
+12º passo: git push origin master
+13º passo: colocar a senha

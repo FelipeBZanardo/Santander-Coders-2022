@@ -1,0 +1,239 @@
+----------------------------------------
+MÉTODOS PARA SET E LIST
+----------------------------------------
+
+1) Criar uma Lista ou um Set:
+	
+	List<Tipo> nomeLista = new ArrayList<>();
+
+	Set<Tipo> = new TreeSet<>();
+
+2) Adicionar um elemento na lista ou no Set:
+	
+	nomeLista.add(elemento);
+
+3) Remover um elemento da lista pelo índice:
+	
+	nomeLista.remove(index);				index inicia no 0;
+								Não funciona em Set
+
+4) Remover um elemento da Lista ou do Set passando um Object:
+	
+	nomeLista.remove(Object);				Object do tipo da lista ou do Set
+
+5) Mostrar todos os valores da Lista ou do Set:
+
+	sout(nomeLista);					diferente do array, é possível mostrar os elementos da Lista, pois há um toString feito na Classe
+
+
+6) Acessando um elemento da Lista pelo índice:
+	
+	nomeLista.get(index);					Não funciona em Set
+
+7) Percorrendo uma lista ou um Set:
+	
+	for (Tipo nome : nomeLista){				chamado de enhanced for ou foreach
+		sout(nome);					Funciona em Set também
+	}
+
+	for (int i = 0; i < nomeLista.size(); i++) {		utilizando o for i
+		sout(nomeLista.get(i));				Não funciona em Set, já que não é possível Set.get(index)
+	}
+
+	nomeLista.forEach(aula -> {sout(aula)};);		utilizando função lambda. A partir do java 8
+
+	nomeLista.forEach(System.out::println);			utilizando o método de referência
+
+8) Tamanho da lista ou do Set:
+	
+	nomeLista.size();					nesse caso não utilizamos o length como em arrays
+
+9) Ordenando uma lista:
+
+	Não é possível utilizar em Set
+	
+	Collections.sort(nomeLista);				não esquecer de importar a Classe Colections
+
+	Collections.sort(nomeLista, Comparator)			Comparator é uma classe criada (implements Comparator<tipo>) para uma ordenação diferente da ordenação natural
+
+10) Ordenando um Set:
+
+	Set<tipoSet> nomeSetOrdenado = new TreeSet(new Comparador);
+	nomeSetOrdenado.addAll(setNaoOrdenado);
+	
+	class Comparador implements Comparator<tipoSet> {
+		implementar o método de comparação
+		fazer a compração com o que se deseja
+	}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------
+MÉTODOS PARA MAP
+-----------------------------------
+
+Ela não deriva classe Collections e portanto tem seus métodos diferentes de Set e List
+
+1) Inicializar um map
+
+	Map<tipoChave, tipoValor> nomeMap = new HashMap<>();
+	Map<tipoChave, tipoValor> nomeMap = new TreeMap<>();
+	MAp<tipoChave, tipoValor> nomeMap = new LinkedHashMap<>();
+
+	tipoChave deve ser uma classe, tipos primitivos não podem ser usados
+
+
+2) Adiconar elementos no Map:
+
+	map.put(chave, valor);
+
+3) Atualizar valor:
+	
+	map.replace(chave, novoValor);
+	map.put(chave, novoValor);		como Map não permite chaves duplicados, será sobreesctrito o valor naquela chave
+
+4) Remover elementos no Map:
+
+	map.remove(chave);
+	map.remove(chave, valor);		caso o valor não seja condizente com a chave, o elemento não será removido
+
+5) Pegar todos os valores
+
+	Collections<tipoValor> nomeValor = nomeMap.values();
+
+6) Pegar todas as chaves
+	
+	Set<tipoChave> nomeChave = nomeMap.keySet();
+
+7) Busca de valores através da chave:
+
+	nomeMap.get(chave);
+
+8) Iteração com todos os valores do Map
+	
+	for (tipoValor nome : nomeMap.values())
+		sout(nome);
+
+9) Iteração com todas as chave do Map
+
+	for (tipoChave nome : nomeMap.keySet())
+		sout(nome); 
+
+10) Para iterar com a chave e o valor num mesmo for deve-se usar entrySet()
+
+	for (Map.Entry<tipoChave, tipoValor> nome : nomeMap.entrySet())
+		sout(nome.getKey() + nome.getValue());
+
+11) Tamanho do Map:
+	
+	nomeMap.size();
+
+12) Verifica se o Map está vazio 
+
+	nomeMap.isEmpty();			retorna boolean
+
+13) Verifica se contém uma chave no mapa:
+
+	nomeMap.containsKey(chaveAProcurar);	retorna boolean
+
+14) Verifica se contém um valor no mapa
+	
+	nomeMap.containsValue(valorAProcurar);	retorna boolean
+
+
+15) Ordernar um Map pelos valores:
+
+	Set<Map.Entry<tipoChave, tipoValor>> nomeSet = new TreeSet(new Comparador);
+	nomeSet.addAll = nomeMap;
+
+	class Comparador implements Comparator<Map.Entry<tipoChave, tipoValor>> {
+		implemementar o método de comparação
+		fazer a comparação de acordo com que se quer ordenar
+	}
+
+	
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Collection:
+	Está no topo da hierarquia.
+	Define as operações básicas como add e remove
+
+	1) Set: 
+		Não permite elementos duplicados (elementos duplicados são removidos do Set)
+		a) SortedSet: classifica os elementos na ordem natural
+		
+		b) HashSet:
+			- dados não ordenados
+			- acesso aos dados mais rápido que o TreeSet
+
+		c) TreeSet:
+			- dados ordenados 
+			- é necessário implementar um comparable, caso o tipo Set<tipo> seja um objeto criado
+			- acesso aos dados mais lento que o HashSet
+
+		d) LinkedHashSet:
+			- elemento ordenados na ordem que foram inseridos
+
+	2) List:
+		Coleção ordenada (por ordem de inserção) com elementos duplicados.
+		Consegue retornar cada elemento pelo seu índice
+
+		a) ArrayList: é um array cujo o tamanho pode ser alterado
+			- busca rápida por elemento (get e set)
+			- exclusão e insersão não tão eficientes (add e remove)
+			- Ao completar os elementos do ArrayList, seu tamanho aumenta 50% do tamanho original
+			- Não é thread-safe
+		
+		b) LinkedList:
+			- contrário do ArrayList
+			- Busca são lineares (não eficientes) (get e set)
+			- Inserções e exclusões são rápidas (add e remove)
+
+		c) Vector:
+			- semelhante ao ArrayList
+			- Ao completar os elementos do Vector, seu tamanho dobra de tamanho automaticamente
+			- é thread-safe
+
+	3) Queue:
+		Mantém uma lista de prioridades.
+		A ordem dos elementos é definida pelo Comparable ou Comparator
+
+	4) Map:
+		Uma chave e um valor
+		Valores podem ser duplicados, mas as chaves não.
+		Caso seja implementado um Map com chaves iguais, a chave será sobrescrita, e portanto, somente valerá a segunda
+		a) SortedMap: ordena de forma crescente as chaves
+
+		b) HashMap:
+			- permite chaves e valores do tipo null
+			- dados não ordenados
+
+		c) TreeMap: 
+			- as chaves são classificadas
+			- a classificação pode ser de forma ascendente ou descendente
+			- perde no desempenho quando comparado com HashMap
+
+		d) LinkedHashMap:
+			- elementos ordenados em ordem de inserção das chaves
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Comparable:
+
+	Usado para ordenação de modo natural.
+	Deve-se implementar na classe de modelo
+
+	Classe nomeClasse implements Comparable<nomeClasse> {
+	}
+
+	@Override
+	public int compareTo (Aula outraAula) {
+		return titulo.compareTo(outraAula.getTitulo());
+	}
+
+
+Comparator
+
+	Usado para uma ordenação diferente da natural
+	Deve-se criar uma classe nova em implementar Comparator<Tipo>
+
+	Implementar o método int compare
+	Fazer a comparação de algo da classe que queira comparar diferente da ordem natural

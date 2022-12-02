@@ -1,0 +1,78 @@
+ESTRUTURAS DE REPETIÇÃO:
+---------------------------------------------------
+
+-------------------------
+For:
+-------------------------
+
+-------------------------
+While:
+-------------------------
+
+-------------------------
+Do While:
+-------------------------
+
+-------------------------
+Recursão:
+-------------------------
+
+Um método chama o outro.
+Recursão normal: utiliza muita memória
+Recursão perfomática: utiliza menos memória - utiliza memorização
+
+-------------------------
+ForEach:
+-------------------------
+--------------------------------------------------------------------------------------------------
+Collections:
+implementações de estruturas de dados.
+
+------------------
+List:
+------------------
+é um array tem que não tamanho pré definido
+é um array dinâmico
+aceita apenas Objetos, não aceita tipos primitivos
+permite valores duplicados
+
+- busca por índice: .get
+- tamanho: .size()
+- pode usar o foreach juntamente com .get
+- nomeLista.forEach(a -> sout(a));
+- ordenar a lista: Collections.sort(nomeLista)
+- atualizar valor da lista: nomeLista.set(índice, valorNovo);
+- remover um elemento: nomeLista.remove(índice);
+- verifica elementos: nomelista.contains(elemento);		retorna boolean
+- apagar todos os elementos: nomeLista.clear();			listas imutáveis não podem ser apagadas
+
+
+
+------------------
+Set:
+------------------
+
+estruturas de dados em forma de conjunto
+não permite valores duplicados
+não possui índice (não possui o método .get)
+- pode usar o forEach
+- usar em uma lista de produtos, por exemplo
+- método add retorna um boolean
+
+
+------------------
+Map:
+------------------
+
+não permite chaves duplicadas. Se duplicado pega somente a última
+- adicionar elementos: .put(chave, valor)
+- .putAbsent(chave, valor)		caso a chave for igual, não há sobrescrita
+- ESTUDAR: Map.of()			pode adiconar até 10 elementos utilizando essa técnica
+
+
+
+
+------------------------------------------------------------------
+Classe Object:
+TODAS as classes são derivadas de Object
+É um superTipo

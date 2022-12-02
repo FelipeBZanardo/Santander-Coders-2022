@@ -1,0 +1,29 @@
+1) Class Let's Code:
+
+	https://class.letscode.com.br/apps/dashboards/project
+
+2) Aula inaugural:
+
+	https://us02web.zoom.us/j/84246979964?pwd=cUNSWktLdEVBRitNdmtBazRNNUx2Zz09
+
+3) Aula dia 04/11 as 21:00:
+	
+	meet.google.com/krz-sbyv-whx
+
+4) Aula de segunda, quarta e sexta as 19:00
+
+	meet.google.com/krz-sbyv-whx
+
+5) Programação das aulas:
+07/11 - Introdução do Java, Paradigma de programação, Variáveis e Tipos, Object, Casting, Saída.
+09/11 - Wrappers, Manipulação de Strings. Entrada.
+11/11 - Operadores e estruturas de seleção (if,else,else if, switch, switch expression).
+16/11 - Função, Array, Matrizes.
+18/11 - Estrutura de repetição (for, while, do while, recursão,forEach).
+21/11 - Collections (List,Set,Map).
+23/11 - Tratamento de Erros e Manipulação de Arquivo.
+25/11 - Projeto (CRUD de produtos salvando em arquivo) e Versionamento
+
+https://www.linkedin.com/in/cleber-hibner-574631a2/
+
+https://www.linkedin.com/in/viniciusconceicaoanalist/

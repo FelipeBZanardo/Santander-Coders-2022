@@ -1,0 +1,188 @@
+ORIENTAÇÃO A OBJETOS:
+
+-> Programação estrutural:
+	- código com sequência, condição e repetição
+	- não é segmentado em um modelo da vida real. É feito tudo num mesmo bloco
+	- Complexidade maior: é programado em módulos
+	
+-> Programação Orientada a Objetos:
+	- Modelagem de Classes e Objetos
+	- Aproxima a linguagem de programação ao mundo real
+	
+	- Benefícios:
+		- mais rápido e fácil
+		- estrutura clara do programa
+		- JAVA DRY - "Don't Repeat Yourself" - torna o código mais fácil de manter, modificar e depurar
+		- aplicativos reutilizáveis e com menor tempo de desenvolvimento
+		- refactory: melhorar o código		
+
+	- Definições:
+		- Classe: é o modelo ou esquema a partir do qual os objetos são criados
+			é uma forma de um bolo. É o que dá formato ao bolo (Objeto)
+			Reune caracteríticas(atributos) e ações(métodos)
+			Planta - Classe; Apartamento - Objeto
+		- Objeto: é uma instância da classe
+			É o o concreto de uma classe
+		- Encapsulamento: ocultar(restringir) o acesso as atributos da classe
+			muda a visibilidade do atributo ou métodos
+		- Comportamento: manipulação de objetos descritas pela classe
+			Depende muito dos métodos;
+			Os comportamentos são limitados a sua responsabilidade
+		- Estados: fotografia de um momento do objeto
+			Interage com os atributos da classe
+		- Atributos: características do Objeto. 
+		- Interface: é um contrato do que a classe vai implementar
+			mostra o que vai implementar, mas não mostra como
+			
+
+-------------------------------------------------------------------------------------------------
+Classe Carro:
+	- Atributos:
+		cor, marca, quantiadePortas
+	- Métodos: 
+		frear, acelerar,...
+
+Exemplo...Classe Agenda:
+
+contato
+        pessoa
+            nome
+            documento
+        telefone
+            tipo
+            ddd
+            numero
+        e-mail
+        empresa
+        
+        Pessoa, telefone podem ser feitas outras classes
+        Uma classe compõe outra classe - Um classe dentro da outra
+	Boa prática é compor mais do que herdar
+	
+
+	é um - herança
+	tem um - composição
+
+	extends - herda classe com classe/interface com interface
+	implements - é contrato. Classe com interface
+
+	Não existe herança múltipla em JAVA : class não pode extends mais de uma class
+	Classes podem implementar várias interfaces
+
+	class implements interface (varias interfaces)
+	class extends class(só uma class)
+	interface extends interface (varias interfaces)
+
+
+public enum TipoDocumento {
+
+	CPF, CNPJ;
+}
+
+public class Documento {
+	private TipoDocumento tipo;
+	private String numero;
+}
+
+public class Pessoa{
+	private String nome;
+	private Documento documento;
+
+	public String getNome(){
+		return String.format("Meu nome é %s", nome);
+	}
+	
+}
+
+
+public class PessoaFisica extends Pessoa {
+
+	//pribate String nome;
+	//private String cpf;
+	private String sobreNome;
+	private String apelido;
+	private Integer idade;
+	private Genero genero;
+
+}
+
+public class PessoaJuridica extends Pessoa{
+	//pribate String nome;
+	//private String cnpj;
+	priavate String inscricaoEstadual;
+	private localDate dataAbertura;
+}
+
+public enum TipoTelefone {
+	RESIDENCIAL, COMERCIAL, CELULAR;
+
+}
+
+
+public class Telefone {
+	private TipoTelefone tipo;
+	private String ddi;
+	private String ddd;
+	private String numero;
+
+}
+
+public class Contato {
+
+	
+	private Pessoa pessoa;
+	private List<Telefone> telefones;
+	private String email;
+	private String empresa;
+
+	public Contato() {}
+
+	public Contato(Pessoa pessoa){
+		this.pessoa = pessoa;
+	}
+
+
+}
+
+PessoaJuridica pj = new PessoaJuridica();
+Contato contato1 = new Contato(pj);
+
+
+
+
+Construtor: 
+	método padrão da classe.
+	Quando não é declarado nada, o construtor é vazio:	
+		public nomeClasse(){}
+
+
+Modificadores:
+	- public: acesso em todas as classes
+	- private: dentro da própria classe
+	- protected: acesso as classes filhas
+	- default(ausência): acesso a nível de pacote
+
+
+Máscara cpf:
+	public final class Constantes {
+	
+	public static final MASCARA_CPF = "###.###.###-##");
+} 
+
+abstract :
+	- só usada em class
+	- a class nunca poderá ser instanciada
+	- podem ter implementções(métodos)
+	- vantagens:
+		- consegue acessar os atributos, ou seja, os atributos também são herdados
+		- força as classes filhas a implementarem seus métodos como se fosse uma interface
+
+
+
+
+
+
+
+
+
+				

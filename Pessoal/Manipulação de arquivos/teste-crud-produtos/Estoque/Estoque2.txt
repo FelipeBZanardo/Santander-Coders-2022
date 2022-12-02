@@ -1,0 +1,5 @@
+1;Maça;2.0
+2;Limão;5.0
+3;banana;1.99
+4;laranja;8.58
+5;Kiwi;11.69

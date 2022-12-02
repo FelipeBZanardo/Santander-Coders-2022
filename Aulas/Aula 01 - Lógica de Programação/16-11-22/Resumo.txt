@@ -1,0 +1,116 @@
+while (!sc.hasNextInt()){
+	sc.next();
+}
+
+
+não usar o new Scanner dentro do try
+para isso, usar: scanner.nextLine() dentro do cacth
+
+https://gist.github.com/asdiasx/b058e9bac15d549c45ec609a87bc6ddb
+
+https://blog.penjee.com/wp-content/uploads/2015/12/linear-vs-binary-search-worst-case.gif
+
+https://blog.penjee.com/wp-content/uploads/2015/04/binary-and-linear-search-animations.gif
+
+
+-----------------------
+FUNÇÃO: são métodos
+-----------------------
+- Pacote (Package):
+	- Pasta ou diretório que contém classes, enum, interfaces...
+	- usado para organizar o código
+
+
+- Modificadores de acesso(visibilidade do método/classe/enum/interface):
+
+	- public: acessada por qualquer outra classe do projeto
+	- protected: métodos da mesma classe, por classes do mesmo pacote e classes derivadas
+	- private: somente pelos métodos da própria classe
+	- default (ausênsia): métodos da mesma classe e classes do mesmo pacote
+
+	- usado para segurança
+
+- Espeficadores(opicional):
+
+	- static: não precisa criar um objeto(instanciar a classe) 
+	- abstract: o método não tem corpo definido
+
+- Retorno:
+
+	- Tipo do dado a ser retornado.
+		- tipos primitivos
+		- classes
+	- void: sem retorno, mas pode-se utilizar o "return"
+	
+- Nome do método
+
+- Argumentos (opcional)
+
+--------------------------------------------------
+Sobrecarga dos métodos:
+
+	- Assinatura é igual, mas o argumento deve ser diferente
+	- Reuso dos métodos
+
+
+-----------------------
+ARRAY:
+-----------------------
+
+- Não tem opções para ordenação, busca ou impressão dos valores
+- Para isso devemos fazer isso manualmente utilizando for, por exemplo
+
+Arrays tem métodos utilitário para automatizar o uso dos array
+Todos esses métodos são estáticos
+- ordenar: Arrays.sort							altera o array
+- buscar valores: Arrays.binarySearch(array, numeroBuscado).		retorna o índice do valor ou um número negativo caso não exista o valor
+			a busca binária funciona apenas com o array ordenado
+
+
+
+-----------------------
+MATRIZ:
+-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Entrada		Saída
+18		Obrigatorio
+70		Obrigatorio
+25		Obrigatorio
+15		Não pode votar
+75		Voto opcional
+
+
+Faça um programa  para testar para os exercicios feitos em casa. 
+
+O programa deve utilizar um array, onde devem estar armazenados
+
+a entrada e o resultado do método.
+
+O programa deve percorrer o array enviando a entrada para o exercício e comparando o resultado do método com o valor armazenado no array.
+
+Para cada teste o programa deve exibir o status. 
+
+Por exemplo:
+
+Teste1 - Sucesso
+
+Teste2 - Falha
+
+Teste3 - Sucesso
+
+3 casos Não pode votar
+
+3 casos Voto obrigatório
+
+3 casos Voto opcional

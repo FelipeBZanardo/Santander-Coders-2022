@@ -1,0 +1,117 @@
+Exceptions:
+-------------------
+
+Condições inesperadas ao executar o código
+- dividir por 0
+- acessar arquivo inesxistente
+- acessar posição inesxistente em um array ou collections
+- acessar um objeto null
+
+NullPointeException: tentar acessar um objeto nulo
+
+O que ocorre quando acontece uma exception:
+- Para a execução da aplicação por ser um condição inisesperada sem tratamento do erro
+- mostra a exceção
+- mostra a linha onde ocorre a exception
+
+exceções lançadas em outros métodos:
+- indica onde ocorreu a exceção
+- indica de onde vem o método com a exceção
+- mostra uma pilha de execução - StackTrace (o método que chama o outro)
+
+Exceção não checada em tempo de compilação:
+- o compilador não verifica se haverá um exceção antes de rodar o código
+
+Exceção checada em tempo de compilação:
+ -IOException : entrada e saída de dados
+ - Duas opções:
+	- usar o throws em todos os métodos 
+	- usar o try/catch	
+
+
+throws: passa a responsabilidade para quem tá chamando o método que pode ter uma exception
+
+Exceções unchecked:
+- derivadas de RunTimeException :
+	- divisaõ por 0;
+	- acesso ao índice de um array 
+
+
+throw new nomeException(Mensagem)		não usar acentos
+throw new: instancia a exception
+é uma linha terminal. Nada abaixo dessa linha de código é executada
+
+try/cacth:
+- não interrompe o fluxo de execução do código ao contrário do throws
+- o método continua funcionando e realizando o tratamento de erro
+
+try: tente fazer;
+	- fluxo normal da codificação
+catch:
+	- entra no bloco caso dê erro(exception)
+	- pode ter mais de um catch
+		- sempre colocar Exception por último, já que ela é o pai de todas as exceptions
+	- usar duas exceptions dentro de um catch usando o Pipe |
+
+	- métodos dentro do cacth:
+		e.getMessage();		mostra apenas a mensagem de erro
+		e.printStackTrace();		mostra toda pilha de erro
+
+finally:
+	roda indepenedente de ocorrer erro ou não
+
+TryWithResources
+- interfaces que usam o Closeable:
+	tem um único método chamado close()
+- Scanner implementa Closeable:
+	scanner.close()
+- BufferedReader pois implementa Reader 
+
+é utilizado quanpo tem classes que implementam o método close()
+não é obrigatório o uso do catch
+	try(Scanner scanner = new Scanner(System.in){
+		
+	}
+fazendo isso não é necessário utilizar o scanner.close() e a variável scanner não existe mais depois de fechar chaves;
+----------------------------------------------------------------------------------------------------------------------------------------------------
+MANIPULAÇAO DE ARQUIVOS:
+-----------------------------
+
+Scanner recebe uma entrada de dados:
+	- arquivo
+	- teclado
+	- etc
+
+	try (Scanner scanner = new Scanner(new FileInputStream("teste.txt"))){
+		while(scanner.hasNextLine()){
+			sout(scanner.nextLine());
+		}
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	}
+
+
+BufferedReader
+	- utilizado para arquivos maiores devido ao buffer
+
+Files:
+	try {
+		List<String> lines = Files.readAllLines(Path.of(teste.txt)));
+		lines.forEach(System.out::println);
+	} catch (IOExceptions e) {
+		e.printSctackTrace();
+	}
+
+
+
+	List<String> lines = List.of("abc", "cde","fgh");
+	Files.write(Path.of("teste.txt"), lines);
+
+	colocar dentro do try catch também
+
+	Caso o arquivo não exista, ele cria o arquivo
+
+	,StandardOpenOption.APPEND		adiciona linhas no arquivo, não a apaga
+
+
+

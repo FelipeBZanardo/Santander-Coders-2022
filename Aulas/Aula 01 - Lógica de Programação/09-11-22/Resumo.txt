@@ -1,0 +1,138 @@
+1 + 5.0 = 1.0 + 5.0		numeric promoted
+				promove o 1 do tipo inteiro para o tipo double
+
+
+
+Classes Wrappers - encapsulam os tipos primitivos
+	
+	- cada tipo primitivo tem uma Wrapper
+	- deixa de usar os tipos primitivos
+	- Usam em Collections, já que há problemas no uso dos tipos primitivos
+	- São classes especiais utilizadas para conversões
+	- não representam o valor e sim o endereço da memória que contém o valor
+
+Boxing e Unboxing:
+	- transformar o primitivo em Warpper e vice-versa
+
+Converter em String
+	variavelAConveter.toString();
+
+Converter uma String em uma classe Wrapper:
+	Double variavelDouble = Double.parseDouble(variavelString);
+	Integer variavelInteger = Integer.parseInteger(variavelString);
+
+	Não há para Character;
+
+
+Conveter de uma Wrapper para outra:
+
+	Integer.valeuOf(a);
+
+	Integer valorInteger = 5;
+	Double valorDouble = valorInteger.doubleValue();
+----------------------------------------------------------------------------
+String
+
+São imutáveis.
+é um array de char
+
+Concatenar:
+	.concat
+	+ 
+
+Tamanho String:
+	length();
+
+Pegar um character da String:
+	.charAt(0);
+
+Busca o caracter e retorna a posição do character
+	.indexOf()
+
+Busca sequencial em todas as posições. Busca linear
+	.contains("");
+
+Pega a String a partir a posição passada
+	.substring(inicio);
+	.substring(inicio, final);
+
+Quebra uma String em partes:
+	.split();
+
+******Estudar o método .join********
+
+Todas as letras maíusculas:
+	.toUpperCase();
+
+Todas as letras minúsculas:
+	.toLowerCase();
+
+Remover espaços no começo e no final:
+	.trim();
+
+Remover espaço entre os caracteres:
+	.replace(" ", "")	substitui os espaços por uma string vazia
+
+-------------------------------------------------------
+Constantes
+
+Trava um valor em uma "variável"
+Utiliza a palavra "final"
+
+----------------------------------------------------
+Enums
+
+Conjunto de elementos fixos
+Todas as variaveis declaradas dentro do enum são static e final
+Podem usar Getters e Setters
+Os valores atribuídos são sempre fixos(cosntantes)
+
+
+nomeEnum.values()		array com os valores do enum
+variavelEnum.ordinal();		índice da variável do enum
+
+JANUARY_EXPENSE (1000),
+FEVEREIRO_EXPENSE (1700);
+
+private Flaot valor;
+
+Trimestre(FLoat valor){
+	this.valor = valor
+}
+
+
+Solicitar que o usuário informe o mês e o sistema deve imprimir o valor gasto do mês.
+Colocar todos os meses do ano.
+Usar o switch
+
+
+
+
+public enum Trimestre {
+
+    JANUARY_EXPENSE (10000F, "valor do mes"),
+    FEBRUARY_EXPENSE (17000F, "valor do mes"),
+    MARCH_EXPENSE (23000F, "valor do mes");
+
+    private float valor;
+    private String mes;
+
+    Trimestre(float valor, String mes){
+        this.valor = valor;
+        this.mes = mes;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+}
+
+//Criar um enum atribuindo nome de cada mês.
+//Solicitar que o usuário informe o mês e o sistema deve imprimir o va
+
+
+

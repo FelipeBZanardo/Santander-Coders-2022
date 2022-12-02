@@ -1,0 +1,47 @@
+Entrada de dados via BufferedReader:
+
+	BufferedReader leitura = new BufferedReader (new InputStreamReader (System.in));
+
+	String algoLido = leitura.readLine();
+--------------------------------------------------------
+Regras
+	1) Não esquecer de importar:
+		import java.io.BufferedReader;
+		import java.io.IOException;
+		import java.io.InputStreamReader;
+
+	2) é necessário usar na class throws IOException - exceção de entrada e saída
+
+	3) sempre é lido no tipo String, caso necessário, usar wrappers para converter
+
+	4) Assim como no scanner, deve-se fechar a entrada de dados:
+		leitura.close()
+		scanner.close()
+ 
+Scanner recebe entrada de dados de vários tipos
+nextLine não consome o caracter da quebra de linha
+Scanner é mais utilizado que BufferedREader para entrada de dados via console
+
+Vantegens BufferedReader:
+	- buffer: espaço temporário de memória
+	- Bufferredreader aumenta o poder do buffer e é usado para leitura de arquivos maiores]
+------------------------------------------------------------------------------------------------------
+
+Operadores:
+
+Ordem de precedência:
+
+postfix		exp++ exp--
+prefix		++exp --exp
+unary		+exp -exp ~ !
+multiplicative	* / &
+additive	+ -
+relational	< > <= >=
+equality	== !=
+logical AND	&&
+logical OR	||
+ternary		? :
+assignment	= += -= *= /= %=
+
+
+pesquisar: instance.of

@@ -1,0 +1,67 @@
+Define como a liguagem vai se comportar e como ela vai ser executada
+
+Tipos:
+	- Paradigma imperativo procedural: define instrução por instrução
+		int numero1 = 3;
+		int numero2 = 5;
+		sout(numero1 + numero2);
+
+
+	- Paradigma orientado a objetos:
+		- representa objetos do mundo real
+		
+		new Calculadora(numero1, numero2);
+
+		public class Calculadora {
+
+			public Calculadora(int numero1, int numero2)
+		}
+
+
+Imperativo: como fazer e o que fazer
+funcional: só mostra o que faer e não como fazer
+
+Criado em 1992 por James Goslin pela Sun
+Middleware: roda dentro de aparelhos eletrônicos (começou assim)
+Java 1.0: torna o navegador mais inteligentes com os Applets 
+Java é OpenSource
+O uso de applets foi acabando e dando lugar à aplicaçãoes com servidores
+Oracle compra a Sun em 2009
+A comunidade define como a liguagem é utilizada
+
+
+
+JAva tem um agente intermediário entre o sistema operacional e a JVM. Esse arquivo é um bytecode
+Todos os bytecodes são iguais idependentes do Sistema operacional
+
+JRE
+JDK - Development Kit 
+	- JVM, 
+	- JRE 	
+	- Ferramentas para verificações
+	- JavaShell
+
+Rodar pelo terminal:
+	- Abrir um bloco de notas e digitar o programa
+	- salvar o arquivo com o mesmo nome da classe .java
+	- Abrir o cmd na pasta onde está o arquivo .java
+	- javac Nome.java		gera o bytecode (arquivo .class)
+	- java Nome			não colocar o .class
+
+
+Regras para declarar variáveis:
+- começar com uma letra ou $ ou _
+- pode conter números, mas não no começo
+- somente _ não é mais identificador a partir do java 9
+- não usar palavras reservadas
+
+https://chat.whatsapp.com/FVsSJO1FtBZLHVCpXruCYA
+
+
+var
+ - java 10
+ - só pode ser usado em variáveis locais
+ - não pode ser utilizado em variáveis de instância
+
+
+ - aceita vários tipos de variáveis
